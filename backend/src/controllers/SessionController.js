@@ -9,7 +9,7 @@ module.exports = {
 
         const ong = await connection('ongs')
             .where('id', id)
-            .select('name')
+            .select('id', 'name')
             .first();
 
         if (!ong){
@@ -17,6 +17,6 @@ module.exports = {
         }
 
         // return response.send('Hello world !!!');
-        return response.json({ id });
+        return response.json( ong );
     }
 }
